@@ -1,0 +1,36 @@
+# This file allows dependencies management in a central location
+# For more information: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
+
+[versions]
+activityCompose = "1.9.1"
+composeBom = "2024.09.00" # Updated Compose BOM version
+coreKtx = "1.14.0"
+espressoCore = "3.6.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+kotlin = "1.9.0" # Assuming Kotlin version 1.9.0 based on compiler extension
+lifecycleRuntimeKtx = "2.8.4"
+lifecycleViewModelCompose = "2.8.4" # Add ViewModel Compose version
+material3 = "1.2.1"
+androidGradlePlugin = "8.5.1" # Check for the latest AGP version
+
+[libraries]
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewModelCompose" } # Add ViewModel Compose library
+material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3"}
+ui = { group = "androidx.compose.ui", name = "ui" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

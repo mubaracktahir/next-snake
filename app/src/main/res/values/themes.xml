@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.NextSnake" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- For example, setting status bar color (though Compose handles this better) -->
+        <!-- <item name="android:statusBarColor">@color/primary_green</item> -->
+         <item name="android:windowLightStatusBar">true</item> <!-- Assuming light status bar icons for light theme -->
+         <item name="android:navigationBarColor">@android:color/white</item> <!-- Or match background -->
+         <item name="android:windowLightNavigationBar">true</item> <!-- Assuming light nav bar icons for light theme -->
+    </style>
+
+     <!-- You might have a separate dark theme defined here for pre-Compose screens if needed -->
+     <style name="Theme.NextSnake.Dark" parent="android:Theme.Material.NoActionBar">
+         <!-- Dark theme attributes -->
+         <item name="android:statusBarColor">@color/primary_green</item> <!-- Adjust dark theme colors -->
+         <item name="android:windowLightStatusBar">false</item>
+         <item name="android:navigationBarColor">@android:color/black</item> <!-- Or match background -->
+         <item name="android:windowLightNavigationBar">false</item>
+     </style>
+</resources>
