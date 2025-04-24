@@ -47,9 +47,13 @@ const GameBoard: React.FC<GameBoardProps> = ({
         <div
           key={`snake-${index}-${segment.x}-${segment.y}`}
           className={cn(
-             "absolute rounded-[2px] transition-all duration-100 ease-linear",
-             index === 0 ? "bg-primary z-10 shadow-lg" : "bg-primary/80", // Head is slightly darker and on top
-             isGameOver ? "bg-destructive/50" : "bg-primary"
+             "absolute rounded-sm transition-all duration-100 ease-linear border border-primary/30", // Slightly more rounded, add border
+             // Apply gradient for a more 'realistic' look
+             "bg-gradient-to-b from-primary via-green-600 to-primary/80",
+             // Head styling (optional: could be slightly different gradient or brighter)
+             index === 0 && "z-10 shadow-lg from-green-500 via-primary to-green-700",
+             // Game over styling overrides regular style
+             isGameOver && "bg-gradient-to-b from-destructive/70 to-destructive/50 border-destructive/50"
           )}
           style={{
             left: `${segment.x * cellSize}px`,
@@ -63,7 +67,8 @@ const GameBoard: React.FC<GameBoardProps> = ({
 
       {/* Render Food */}
       <div
-        className="absolute bg-secondary rounded-full shadow-md animate-pulse"
+        // Keep food simple red circle/square
+        className="absolute bg-secondary rounded-sm shadow-md animate-pulse border border-red-800/50"
         style={{
           left: `${food.x * cellSize}px`,
           top: `${food.y * cellSize}px`,
