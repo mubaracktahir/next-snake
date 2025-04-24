@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "NextSnake"
+rootProject.name = "Next Snake"
 include(":app")
