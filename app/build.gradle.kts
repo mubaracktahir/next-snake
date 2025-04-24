@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
 }
 
 android {
     namespace = "com.example.nextsnake"
-    compileSdk = 34 // Target latest stable SDK
+    compileSdk = 35 // Target latest stable SDK
 
     defaultConfig {
         applicationId = "com.example.nextsnake"
@@ -24,8 +25,7 @@ android {
         release {
             isMinifyEnabled = false // Consider enabling for production releases
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -41,7 +41,7 @@ android {
     }
     composeOptions {
         // Ensure this matches your Kotlin compiler version (e.g., 1.5.21 for Kotlin 1.9.0)
-         // Check compatibility: https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+        // Check compatibility: https://developer.android.com/jetpack/androidx/releases/compose-kotlin
         kotlinCompilerExtensionVersion = "1.5.1" // Adjust if needed based on Kotlin version
     }
     packaging {

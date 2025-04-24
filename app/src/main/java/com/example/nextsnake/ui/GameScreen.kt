@@ -125,7 +125,7 @@ fun GameControls(
                  onClick = { if (isGameOver) onRestart() else onPlayPauseToggle() },
                  icon = when {
                      isGameOver -> Icons.Filled.Refresh // Show Restart if game over
-                     isRunning -> Icons.Filled.Pause    // Show Pause if running
+                     isRunning -> Icons.Filled.Star
                      else -> Icons.Filled.PlayArrow // Show Play if paused/stopped
                  },
                  contentDescription = when {
